@@ -1,9 +1,41 @@
-<p style="margin-top: 200px;margin-left: 120px;text-align: left;font-size:30px;">安東慧</p>
-<p style="margin-top: 50px;margin-left: 120px;text-align: left;font-size:30px;">ANDO KEI</p>
-<a href="CV.html"style="margin-top: 50px;margin-left: 120px;text-align: left;font-size:30px;">CV</a>
-<a href="work.html"style="margin-top: 50px;margin-left: 120px;text-align: left;font-size:30px;">1</a>
-<a href="https://youtu.be/RbWfCQ53-J8"style="margin-top: 50px;margin-left: 120px;text-align: left;font-size:30px;">2</a>
+<style>
+  /* 1. リンク（aタグ）の基本設定 */
+  a {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    margin-top: 50px;
+    margin-left: 120px;
+    font-size: 30px; /* メインの文字サイズ */
+  }
 
+  /* 2. マウスを当てた時に出る「文字」の設定 */
+  a::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 100%;           /* リンクの右端を起点にする */
+    top: 50%;
+    transform: translateY(-50%);
+    
+    /* ご要望の調整点 */
+    font-size: 30px;      /* リンクの文字サイズと統一 */
+    padding-left: 30px;   /* 左側に作るスペース（ここでお好みの広さに調整） */
+    color: #000;          /* シンプルな黒文字 */
+    
+    white-space: nowrap;
+    display: none;
+  }
 
-<img src="IMG_3924.JPG" width="1500"style="margin-left: 120px;margin-top: 200px;">
+  /* 3. マウスを当てた時だけ表示 */
+  a:hover::after {
+    display: block;
+  }
+</style>
 
+<p style="margin-top: 200px;margin-left: 120px;font-size:30px;">安東慧</p>
+<p style="margin-top: 50px;margin-left: 120px;font-size:30px;">ANDO KEI</p>
+
+<a href="CV.html" data-tooltip="Curriculum Vitae">CV</a><br>
+<a href="work.html" data-tooltip="Selected Works">1</a><br>
+<a href="https://youtu.be/RbWfCQ53-J8" data-tooltip="AutoCAD Video">2</a>
